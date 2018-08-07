@@ -1,3 +1,6 @@
+// http://javabypatel.blogspot.com/2016/11/rotate-matrix-by-90-degrees-inplace.html
+// https://code.likeagirl.io/rotate-an-2d-matrix-90-degree-clockwise-without-create-another-array-49209ea8b6e6
+
 type Matrix<T> = T[][];
 
 function rotateMatrix<T>(matrix: Matrix<T>): Matrix<T> {
@@ -7,18 +10,21 @@ function rotateMatrix<T>(matrix: Matrix<T>): Matrix<T> {
     }
     const rotatedMatrix = Array(size).fill(undefined).map(() => []);
     for (let i=0; i<size/2; i++) {
-        const first = i;
-        const last = size - i - 1;
-        for (let j=first; j<=last; j++) {
-            rotatedMatrix[j][last] = matrix[i][j]; // topToRight
-            rotatedMatrix[last][last-j+i] = matrix[j][last]; // rightToBottom
-            rotatedMatrix[j][first] = matrix[last][j]; // bottomToLeft;
-            rotatedMatrix[first][last-j+i] = matrix[j][first]; // leftToTop;
+        for (let j=0; j< size - i - 1; j++) {
+            const temp = matrix[i][j];
+            rotatedMatrix[i][j] = matrix[size-1-j][i]; // leftToTop;
+            rotatedMatrix[size-1-j][i] = matrix[size-1-i][size-1-j]; // bottomToLeft;
+            rotatedMatrix[size-1-i][size-1-j] = matrix[j][size-1-i]; // rightToBottom
+            rotatedMatrix[j][size-1-i] = temp; // topToRight
         }
     }
+    if(size % 2) {
+        const i = Math.ceil(size / 2) - 1;
+        rotatedMatrix[i][i] = matrix[i][i];
+    }
+
     return rotatedMatrix;
 }
-
 
 const source = [
     [ 1,  2,  3,  4,  5],
@@ -50,6 +56,6 @@ const output2 = [
     [ 14, 10, 6, 2 ],
     [ 15, 11, 7, 3 ],
     [ 16, 12, 8, 4 ],
-]
+];
 
 console.log(rotateMatrix(source2).toString() === output2.toString());
