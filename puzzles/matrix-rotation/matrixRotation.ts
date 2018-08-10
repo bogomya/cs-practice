@@ -8,7 +8,7 @@ function rotateMatrix<T>(matrix: Matrix<T>): Matrix<T> {
     if(!size) {
         return matrix;
     }
-    const rotatedMatrix = Array(size).fill(undefined).map(() => []);
+    const rotatedMatrix: Matrix<T> = new Array(size).fill(undefined).map(() => []);
     for (let i=0; i<size/2; i++) {
         for (let j=0; j< size - i - 1; j++) {
             const temp = matrix[i][j];
