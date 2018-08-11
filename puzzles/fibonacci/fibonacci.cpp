@@ -47,10 +47,28 @@ class FibIterative final {
         }
 };
 
+class FibFinal final {
+    public:
+        static int get(int n) {
+            assert(n>=0);
+            if (n <= 1) {
+                return n;
+            }
+            int a = 0;
+            int b = 1;
+            for (int i = 2; i <=n; i++) {
+                int c = a + b;
+                a = b;
+                b = c;
+            }
+            return b;
+        }
+};
+
 int main(void) {
     int n;
     std::cin >> n;
     /*std::cout << FibNaive::get(n) << std::endl;*/
-    std::cout << FibIterative::get(n) << std::endl;
+    std::cout << FibFinal::get(n) << std::endl;
     return 0;
 }
