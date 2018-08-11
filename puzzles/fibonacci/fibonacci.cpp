@@ -1,6 +1,7 @@
 #include <cassert>
 #include <iostream>
 #include <unordered_map>
+#include <vector>
 
 class FibNaive final {
     public:
@@ -35,7 +36,8 @@ class FibIterative final {
     public:
         static int get(int n) {
             assert(n>=0);
-            static std::unordered_map<int, int> cache;
+            static std::vector<int> cache;
+            cache.resize(n+1);
             cache[0] = 0;
             cache[1] = 1;
             for (int i = 2; i <=n; i++) {
