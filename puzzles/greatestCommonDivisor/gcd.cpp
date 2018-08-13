@@ -7,11 +7,11 @@ template <class Int>
 Int gcd(Int a, Int b) {
     assert(a > 0 && b > 0);
 
-    while (a > 0 && b > 0) {
+    while (b > 0) {
         a %= b;
         std::swap(a, b);
     }
-    return a == 0 ? b : a;
+    return a;
 }
 
 int main(void) {
