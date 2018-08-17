@@ -1,6 +1,3 @@
-// http://javabypatel.blogspot.com/2016/11/rotate-matrix-by-90-degrees-inplace.html
-// https://code.likeagirl.io/rotate-an-2d-matrix-90-degree-clockwise-without-create-another-array-49209ea8b6e6
-
 type Matrix<T> = T[][];
 
 function rotateMatrix<T>(matrix: Matrix<T>): Matrix<T> {
