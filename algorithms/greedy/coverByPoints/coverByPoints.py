@@ -20,7 +20,7 @@ def main():
         begin, end = map(lambda i: int(i), input().split(" "))
         segments.append(( begin, end))
     points = coverByPoints(segments)
-    print(" ".join(points))
+    print(" ".join(map(str, points)))
 
 if __name__ == "__main__":
     main()
