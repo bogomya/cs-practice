@@ -1,10 +1,9 @@
 class Stack:
-
     def __init__(self):
         self.stack = []
 
-    def push(self, dataval):
-        self.stack.append(dataval)
+    def push(self, value):
+        self.stack.append(value)
 
     def pop(self):
         return self.stack.pop() if len(self.stack) else None
