@@ -8,7 +8,8 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
 
-    def unshift(self, value):
+    # Add elements at the beginning
+    def push(self, value):
         NewNode = Node(value)
         NewNode.next = self.head
         self.head = NewNode
@@ -26,7 +27,7 @@ class SinglyLinkedList:
             prevNode = currentNode
             currentNode = currentNode.next
 
-    def printList(self):
+    def print(self):
         printVal = self.head
         while (printVal):
             print(printVal.data),
@@ -34,9 +35,9 @@ class SinglyLinkedList:
 
 
 list = SinglyLinkedList()
-list.unshift(4)
-list.unshift(3)
-list.unshift(2)
-list.unshift(1)
+list.push(4)
+list.push(3)
+list.push(2)
+list.push(1)
 list.remove(4)
-list.printList()
+list.print()
