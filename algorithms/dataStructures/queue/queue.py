@@ -1,6 +1,6 @@
 class Queue:
   def __init__(self):
-      self.queue = list()
+      self.queue = []
 
   def push(self, dataval):
       self.queue.insert(0,dataval)
