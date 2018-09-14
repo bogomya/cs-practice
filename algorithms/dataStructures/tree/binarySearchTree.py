@@ -31,18 +31,11 @@ class Node:
         else:
             print(str(self.data) + ' is found')
 
-    def print(self):
-        if self.left:
-            self.left.print()
-        print(self.data),
-        if self.right:
-            self.right.print()
+if __name__ == '__main__':
+    root = Node(12)
+    root.insert(6)
+    root.insert(14)
+    root.insert(3)
 
-root = Node(12)
-root.insert(6)
-root.insert(14)
-root.insert(3)
-root.print()
-
-root.find(3)
-print(root.find(33))
+    root.find(3)
+    print(root.find(33))
