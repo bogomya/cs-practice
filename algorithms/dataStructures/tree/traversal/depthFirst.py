@@ -17,6 +17,13 @@ class TraversedNode(Node):
         if self.right:
             self.right.inOrderTraverse()
 
+    def postOrderTraverse(self):
+        if self.left:
+            self.left.postOrderTraverse()
+        if self.right:
+            self.right.postOrderTraverse()
+        print(self.data)
+
 def initTree(nodeCreator):
     A = nodeCreator("A")
     B = nodeCreator("B")
@@ -51,7 +58,8 @@ if __name__ == '__main__':
     root.inOrderTraverse()
     print("preOrderTraverse")
     root.preOrderTraverse()
-
+    print("postOrderTraverse")
+    root.postOrderTraverse()
 
 
 
