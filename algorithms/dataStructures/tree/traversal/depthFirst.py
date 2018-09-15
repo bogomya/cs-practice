@@ -4,25 +4,31 @@ from binarySearchTree import Node
 
 class TraversedNode(Node):
     def preOrderTraverse(self):
-        print(self.data)
+        result = []
+        result.append(self.data)
         if self.left:
-            self.left.preOrderTraverse()
+            result = result + self.left.preOrderTraverse()
         if self.right:
-            self.right.preOrderTraverse()
+            result = result + self.right.preOrderTraverse()
+        return result
 
     def inOrderTraverse(self):
+        result = []
         if self.left:
-            self.left.inOrderTraverse()
-        print(self.data)
+            result = self.left.inOrderTraverse()
+        result.append(self.data)
         if self.right:
-            self.right.inOrderTraverse()
+            result = result + self.right.inOrderTraverse()
+        return result
 
     def postOrderTraverse(self):
+        result = []
         if self.left:
-            self.left.postOrderTraverse()
+            result = self.left.postOrderTraverse()
         if self.right:
-            self.right.postOrderTraverse()
-        print(self.data)
+            result = result + self.right.postOrderTraverse()
+        result.append(self.data)
+        return result
 
 def initTree(nodeCreator):
     A = nodeCreator("A")
@@ -54,12 +60,10 @@ def initTree(nodeCreator):
 
 if __name__ == '__main__':
     root = initTree(TraversedNode)
-    print("inOrderTraverse")
-    root.inOrderTraverse()
-    print("preOrderTraverse")
-    root.preOrderTraverse()
-    print("postOrderTraverse")
-    root.postOrderTraverse()
+    print("preOrderTraverse", root.preOrderTraverse())
+    print("inOrderTraverse",  root.inOrderTraverse())
+    print("postOrderTraverse", root.postOrderTraverse())
+
 
 
 
