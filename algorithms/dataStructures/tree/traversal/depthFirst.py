@@ -33,6 +33,20 @@ class TraversedNode(Node):
             result = result + self.right.inOrderTraverse()
         return result
 
+    def iterativeInOrderTraverse(self):
+        result = []
+        stack = []
+        node = self
+        while(len(stack) or node != None):
+            if node:
+                stack.append(node)
+                node = node.left
+            else:
+                node = stack.pop()
+                result.append(node.data)
+                node = node.right
+        return result
+
     def postOrderTraverse(self):
         result = []
         if self.left:
@@ -75,6 +89,7 @@ if __name__ == '__main__':
     print("preOrderTraverse", root.preOrderTraverse())
     print("iterativePreOrderTraverse", root.iterativePreOrderTraverse())
     print("inOrderTraverse",  root.inOrderTraverse())
+    print("iterativeInOrderTraverse",  root.iterativeInOrderTraverse())
     print("postOrderTraverse", root.postOrderTraverse())
 
 
