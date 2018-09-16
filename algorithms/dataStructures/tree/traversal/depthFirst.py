@@ -56,6 +56,24 @@ class TraversedNode(Node):
         result.append(self.data)
         return result
 
+    def iterativePostOrderTraverse(self):
+        result = []
+        stack = []
+        lastVisitedNode = None
+        node = self
+        while (len(stack) or node != None):
+            if node:
+                stack.append(node)
+                node = node.left
+            else:
+                topNode = stack[-1]
+                if topNode.right != None and lastVisitedNode != topNode.right:
+                    node = topNode.right
+                else:
+                    result.append(topNode.data)
+                    lastVisitedNode = stack.pop()
+        return result
+
 def initTree(nodeCreator):
     A = nodeCreator("A")
     B = nodeCreator("B")
@@ -91,6 +109,7 @@ if __name__ == '__main__':
     print("inOrderTraverse",  root.inOrderTraverse())
     print("iterativeInOrderTraverse",  root.iterativeInOrderTraverse())
     print("postOrderTraverse", root.postOrderTraverse())
+    print("iterativePostOrderTraverse", root.iterativePostOrderTraverse())
 
 
 
