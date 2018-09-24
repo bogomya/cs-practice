@@ -8,10 +8,11 @@ class Stack:
     def pop(self):
         return self.stack.pop() if len(self.stack) else None
 
-stack = Stack()
-stack.push("Mon")
-stack.push("Tue")
-print(stack.pop())
-stack.push("Wed")
-stack.push("Thu")
-print(stack.pop())
+if __name__ == '__main__':
+    stack = Stack()
+    stack.push("Mon")
+    stack.push("Tue")
+    print(stack.pop())
+    stack.push("Wed")
+    stack.push("Thu")
+    print(stack.pop())

@@ -47,11 +47,12 @@ class DoublyLinkedList:
             print(node.data),
             node = node.next
 
-list = DoublyLinkedList()
-list.push(12)
-list.append(9)
-list.push(8)
-list.push(62)
-list.append(45)
-list.print(list.head)
+if __name__ == '__main__':
+    list = DoublyLinkedList()
+    list.push(12)
+    list.append(9)
+    list.push(8)
+    list.push(62)
+    list.append(45)
+    list.print(list.head)
 
