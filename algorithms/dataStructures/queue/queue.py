@@ -19,6 +19,8 @@ class LLQueue:
         self.queue.pushBack(value)
     def dequeue(self):
         return self.queue.popFront()
+    def empty(self):
+        return self.queue.empty()
 
 if __name__ == '__main__':
     queue = Queue()
@@ -34,3 +36,6 @@ if __name__ == '__main__':
     queue.enqueue("Wed")
     print(queue.dequeue())
     print(queue.dequeue())
+    print(queue.empty())
+    print(queue.dequeue())
+    print(queue.empty())

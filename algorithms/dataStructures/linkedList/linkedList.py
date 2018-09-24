@@ -75,6 +75,9 @@ class SinglyLinkedList:
             print(printVal.data),
             printVal = printVal.next
 
+    def empty(self):
+        return self.head == None
+
 if __name__ == '__main__':
     list = SinglyLinkedList()
     list.pushFront(4)
