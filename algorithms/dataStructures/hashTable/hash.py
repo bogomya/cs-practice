@@ -1,7 +1,7 @@
-import scipy
+from math import sqrt
 
 def isPrime(n):
-    d_max = scipy.sqrt(n)
+    d_max = sqrt(n)
 
     if n == 2:
         return True
@@ -16,7 +16,7 @@ def isPrime(n):
 
 
 def firstPriveGreatherThan(min):
-    for n in scipy.arange(min + 1, min * 2):
+    for n in range(min + 1, min * 2):
         if isPrime(n):
             return n
     return None
