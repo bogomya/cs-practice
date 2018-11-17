@@ -37,7 +37,9 @@ describe("sum", () => {
         expect(sum(parseInt("101101", 2), parseInt("100111", 2))).toEqual(parseInt("1010100", 2));
         expect(sum(232, 49)).toEqual(281);
     });
+});
 
+describe("multiply", () => {
     it("should multiply x and y", () => {
         expect(multiply(parseInt("00001101", 2), parseInt("00001001", 2))).toEqual(parseInt("01110101", 2));
         expect(multiply(33, 4)).toEqual(132);
